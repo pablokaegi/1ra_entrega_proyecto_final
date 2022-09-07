@@ -4,6 +4,7 @@ const lugares= [
     {id:2,nombre:"cataratas",precio:30000}, 
     {id:3,nombre: "catamarca",precio:70000}
 ];
+
 /*definimos variales*/
 
 let bariloche =50000;
@@ -17,6 +18,18 @@ let nombre;
 let numeroDeTarjeta;
 let tarjeta;
 let pasajeros;
+
+/*Filtrar por precio los destinos disponibles */
+let precio= parseInt(prompt("Ingrese un precio para encontrar su destino más conveniente a partir de 70000"))
+let filtrados = lugares.filter(item => item.precio<= precio);
+    filtrados.forEach (item => {
+        let mensaje =`
+        id: ${item.id}
+        nombre: ${item.nombre}
+        precio: ${item.precio}
+        `;
+        alert(mensaje);
+    } )
 
 
 alert("Los destinos disponibles por el momento son: Bariloche, Cataratas y Catamarca - ¡Con tu código promocional hasta 50%  de descuento HotSale!");
